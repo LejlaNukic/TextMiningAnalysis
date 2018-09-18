@@ -1,0 +1,783 @@
+﻿
+UNIVERSITY IN SARAJEVO
+ELEKTROTEHNIČKI FAKULTET
+
+
+
+
+
+
+
+
+
+
+
+DEVELOPMENT OF WEB SHOP APPLICATION BY APPLICATION RUBY ON RAILS
+
+FINAL WORK 1. CYCLE OF STUDY
+
+
+
+
+
+
+
+
+Mentor: Student:
+Doc. dr Samir Omanović, dipl.ing.el.                  Lejla Nukic
+
+Sarajevo, September 2016.
+Final work setting
+Teacher: Doc.dr Samir Omanovic, dipl.ing.el.
+Topic: Development of web shop applications using Ruby on Rails
+Subject Title: Development of software solutions
+Student: Lejla Nukić
+Goal: 
+Getting to know Ruby on Rails of open-source web framework in software development and the development of an application that demonstrates the application of it. 
+Description:
+It is necessary to explore the possibilities of Ruby on Rails open-source web framework. After that, using Ruby on Rails to develop a web shop application. This application should include processes related to the review of offers, purchases and payments.
+Work plan: 
+1. Getting to know Ruby on Rails open-source web framework.
+2. Specification of the functionality of the web shop application.
+3. Development of the web shop application.
+4. Writing a document: Theoretical basics (technologies applied in application development, especially the chapter on Ruby on Rails), practical part (application development process with explanations for the application of Ruby on Rails), application demonstration, conclusion, literature.
+Expected results:
+1. Web shop application.
+2. Final work document.
+3. Good knowledge and ability to apply Ruby on Rails in developing software solutions.
+
+Beginning literature:
+1. Ruby on Rails, http://rubyonrails.org/  
+2. What is Ruby on Rails ?, http://railsapps.github.io/what-is-ruby-rails.html
+3. The Professional Ruby on Rails Developer, https://www.udemy.com/pro-rubyonrails/  
+
+____________________________________
+                                                                                       Mentor: Doc.dr Samir Omanović, dipl.ing.el.
+University in Sarajevo 
+Name of faculty / academy: Faculty of Electrical Engineering
+Name of Department and / or Chair: Computer and Informatics
+Subject Title: Development of software solutions 
+
+Declaration of Authenticity of Works 
+Seminar work, final (diploma or master's) work for the first and second cycle of studies and integrated study program I and II of the study cycle, master's thesis and doctoral dissertation1 
+
+First and last name: Lejla Nukić 
+Title: Development of the web shop application using Ruby on Rails 
+Type of work: Final work for the first cycle of studies 
+Number of pages: ________________________________ 
+
+I confirm
+that I have read the documents relating to plagiarism, as defined by the Statute of the University of Sarajevo, the Code of Ethics of the University of Sarajevo and the study rules relating to I and II study cycles, the integrated study program I and II cycles and the III cycle of studies at the University of Sarajevo, as well as instructions on plagiarism listed on the website of the University of Sarajevo;
+that I am aware of the university disciplinary rules concerning plagiarism; 
+that the work that I teach is completely my own, independent work, except in the parts where it is indicated;
+that the work has not been handed over, in whole or in part, for obtaining a title at the University of Sarajevo or another higher education institution;
+that I clearly indicated the presence of quoted or paraphrased material and that I referred to all sources;
+that I have consistently listed the used and quoted sources or bibliographies according to some of the recommended citation styles, specifying a complete reference that includes a complete bibliographic description of the source and source used; 
+that I have appropriately indicated each assistance I received in addition to the assistance of mentors and academic tutors. 
+
+Place, date: Sarajevo, September 2016
+Signature: ________________________________
+Summary
+The subject of this paper is the development of the web shop application using Ruby on Rails.  Ruby on Rails or, to put it short, Rails, is a free development environment for web applications created by David Heinemeier Hansson. Since the launch of the first version of Rails in 2005, until now, members of the Rails community are actively working on its improvement and Rails is widely used precisely because it offers a wide range of various functionalities completely free. 
+This paper provides an insight into the possibilities and the way this environment is applied to the development of the web shop application and highlights a number of important features of Ruby on Rails. 
+Within this paper, the process of developing a web shop application was elaborated and presented in order to demonstrate the ability of Ruby on Rails to develop the development environment to develop software solutions. As a result, a web shop application, which includes processes related to the review of offers, purchases and payments, was created. The application was created in accordance with the basic principles of Ruby on Rails, and as such can very easily be expanded with new functionalities. 
+
+Keywords - Ruby on Rails, web applications, open-source software, development environment, web shop, developer
+
+
+
+
+
+
+
+
+
+
+
+
+Abstract
+The aim of this paper is to develop a web shop application using Ruby on Rails. Ruby on Rails - or simply, Rails - is an open source, rapid web development framework, created by David Heinemeier Hansson. Since it was officially released in 2005, Rails today is actively maintained by a large community of developers and forms the backbone of many of the most popular applications on the web, primarily because it offers a wide range of functionalities for free.
+This paper gives an insight into the possibilities and features of Ruby and ways to work with it through the example of building a web shop application. 
+Also, it will be shown a workflow for creating a Rails Application with the goal of demonstrating Rails expertise in developing complex software solutions. As a result, a web shop application is created with all of its features such as reviews of products, purchases and payments. The application is created in accordance with the basic principles of Ruby on Rails and as such it can be extended with many new features and functionalities.
+
+Keywords - Ruby on Rails, web application, open source software, framework, web shop, developer
+
+
+
+
+
+
+
+
+
+
+
+
+Content
+Final work setting 2
+Abstracts 4
+Abstract 5
+List of Figures 7
+List of tables 10
+1. Introduction 11
+1.1. Subject of research 11
+1.2. Research goals 11
+1.3. Research Methodologies 12
+1.4. Structure of work 12
+2. Web applications 13
+3. Ruby on Rails 18
+4. Dummy application 22
+5. Web shop application 28
+5.1. User module 30
+5.1.1. User registration 30
+5.1.2. User login 33
+5.2. Offer Review Module 35
+5.3. Module of basket 42
+5.4. Payment module 46
+6. An example of using the web shop application 50
+Conclusion 56
+References 58
+Annexes 59
+
+
+
+List of images
+Figure 1 Web application mode [2] 13
+Figure 2 Three - layer web application architecture [4] 14
+Figure 3 A set of created directories 23
+Figure 4 Appearance of the application after the first start of the command rails 23
+Figure 5 Model-View-Controller architecture [9] 24
+Figure 6 Appearance of the Say controller 25
+Figure 7 Home page with current time display 25
+Figure 8 Home page 26
+Figure 9 New page of the application 26
+Figure 10 Use case diagram web shop application 29
+Figure 11 ER Diagram web shop application 29
+Figure 12 Migration to create a Users table 31
+Figure 13 Model User 31
+Figure 14 Create i new methods of controller users 32
+Figure 15 Code for registering users 33
+Figure 16 Sessions controller 34
+Picture 17 Sessions helper 35
+Figure 18 Model Product 36
+Figure 19 Model Color 37
+Picture 20 Model Brand 37
+Picture 21 Model Category 37
+Figure 22 Index method of controller products 37
+Figure 23 Code filtering code 39
+Figure 24 Product Listing Code 39
+Figure 25 Show method controller products 40
+Figure 26 Part of the code for displaying a single item 40
+Figure 27 Script that records the size of the product based on the selected color 41
+Figure 28 Sizes method of product_variants controller 41
+Figure 29 Code for displaying additional products 41
+Figure 30 Associations between table carts and other tables 42
+Figure 31 Associations between table line_items and other tables 43
+Figure 32 Script that updates the contents of the basket and the number of items in the basket 43
+Figure 33 Create the method of the line_items controller 44
+Figure 34 Code to display basket contents 45
+Figure 35 Removing item from basket 45
+Figure 36 Current cost of costs 46
+Figure 37 Mapping for next and pay methods of carts controllers 46
+Figure 38 Form for entering delivery data 47
+Figure 39 Payment method of carts controller 47
+Figure 40 Code for Card Payment button 48
+Figure 41 Create method of controller charges 48
+Figure 42 Part of the title page 50
+Figure 43 The search result for the default parameters 50
+Figure 44 Detailed view of article 51
+Figure 45 User registration form 52
+Figure 46 Application form for users 52
+Figure 47 Appearance of basket contents 53
+Figure 48 Appearance of basket contents 53
+Figure 49 Form for data entry for delivery 54
+Figure 50 Delivery information 54
+Figure 51 Form for payment 55
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+List of tables
+Table 1 Stack Technology of Famous Websites [2] 17
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Introduction
+The need for continuous optimization of operations, increased efficiency and cost reduction have prompted a wide range of companies, as well as individual users, to reach for new business solutions. The development of modern technologies has made people increasingly decide on placement, sale and purchase of products over the Internet. Businesses and sales that are not present on the Internet now have less chances of survival, and we can often encounter so-called. e-stores that only exist online. One of the main means of supporting and realizing a comfortable, transparent and efficient online shopping is web application2. The popularity of this trend in the sales business is quite understandable and justified if we take into account all the benefits of the related environment in which each actor of the sale / purchase can do his job from anywhere in the world quickly, efficiently and cheaply using the same web application.
+1.1. Subject research
+The subject of this paper is to explore the possibilities of Ruby on Rails open-source web development environment and apply it to the development of a web shop application. The research was conducted with the goal of realizing a functional web application, as well as identifying the advantages and disadvantages of the Ruby on Rails development environment in relation to other development environments, and discovering some other types of problems suitable for resolving using Ruby on Rails3. The subject of research is significant and current due to the fact that Rails is an environment in which Ruby programming language owes more and more popularity, and in the future, no interest in Ruby on Rails is expected as Rails community "Rails Community" is constantly working on the expansion, improvement and improvement the capabilities of this development environment that are available to everyone free of charge, or licensed as open-source software. 
+The significance of this topic is also reflected in the fact that today more and more Web Engineering is becoming more and more popular. Web engineering). Web engineering is a special science discipline that uses the principles of software engineering, and extends them with new approaches, methodologies, tools, techniques, and guidelines for the development of web based applications that will meet specific requirements. [1] 
+1.2. Research goals
+The goals of this paper are:
+getting to know the application of Ruby on Rails open-source web framework in software development 
+the development of an application that demonstrates its application 
+1.3. Research methodology
+The data used in this paper come from various sources of literature (articles, websites, professional literature, etc.) in order to get to know more about the topic being explored. A descriptive method for collecting data and information, and various research methods including an overview of adequate literature, etc., has been used. 
+1.4. Structure of work
+The paper consists of six chapters: Introduction, Web Applications, Ruby on Rails, Dummy Applications, Web Shop Applications, Example of Using Web Store Applications and Conclusion. 
+The introductory part introduces introductory considerations, as well as the subject, objectives and methods of research.
+The second chapter explains the concept and structure of the web application along with the advantages and disadvantages of web applications. Within this chapter we briefly list the problems that web applications today solve, as well as the technologies for developing these applications.
+The third chapter describes the principles, capabilities and benefits of the Rails development environment.
+In the fourth chapter, a small part of the Rails development environment is presented through an example of creating a simple application.
+Chapter 5 introduces the process of creating an application that has been developed within the practical part of the work. As part of this chapter, appropriate diagrams have been added for the purpose of describing the application. In the main part of this chapter, the focus is on the demonstration and description of the application of Ruby on Rails for the development of the web shop application.
+The sixth chapter demonstrated practical work through examples and explanations of using the functionality of the web shop application.
+At the end of each chapter, brief concluding considerations related to matter processed in chapters are given. 
+The final chapter provides concluding observations on the problems discussed in this paper.
+
+
+2. Web applications
+In today's environment, when everyone is interconnected and where almost everything can be connected via the Internet, it's hard to imagine modern business without the web. Today, web applications are considered to greatly contribute to business development and are an important factor in increasing customer satisfaction with the products and services they offer.  This chapter will briefly explain the concept and structure of the web application, the advantages and disadvantages of web applications, and some of the web application development tools will be mentioned.
+A web application is a client-server software application that is accessed by users through a web browser using networks such as Internet4 or intranet5.2] 
+The following figure shows the way web applications work:
+
+Figure 1 Web application mode [2]
+The Web Application Principle consists of the following steps:
+The user in the web browser enters the address or fills in the form
+The user's computer sends an HTTP or HTTPS request over the Internet to a web server with HTTP server, scripting language and web applications.
+The Web application analyzes the requested request and if needed:
+pulls and / or processes data
+documents
+Database
+communicates with other web servers or web services
+The result of the web application can be web pages, CSS. Cascading Style Sheet), XML (eng. Extensible Markup Language), picture, video, flash, etc. which the web server sends over the Internet to the user's computer.
+Depending on how the content of the website is displayed, there are two types of web pages:
+Static - whose content is formed once and no longer changes. For this type of web site, only HTML and CSS technologies are used, and only the web browser is sufficient for their display. 
+Dynamic - whose content changes depending on interaction with the user and his actions. To generate the content of such sites, a web server and the use of a scripting language are required (e.g. PHP, Ruby, Perl, Python).
+Web applications were present even before the web gained more popularity. For example, in 1987 Larry Wall developed Perl, a popular server-side scripting language. It happened seven years before the Internet came to life outside academic and technological circles. [2] [3] 
+The first web applications were quite simple and usually had one-layer architecture, but in the late 1990s more and more complex Web applications began to appear. Today, web applications typically have three-tiered architecture (Figure 2) (three-tiered architecture), and they make up [4]:
+1. Presentation layer (eng. Presentation tier) - the display layer for information to the user via the web browser
+2. Application layer (eng. Application tier or Middleware tier, or Business Logic) - a layer that manages the activities that the application needs to execute (ie by processing or running an application)
+3. Data layer (eng. Data tier) - a layer that manages the storage of data in the database and the supply of data from the database)
+
+
+Figure 2 Three-layer web application architecture [4]
+In addition to three layers, in practice, two-layer and n-layer web applications can be encountered. The two-tier architecture is mainly based on the existence of a "smart" client who performs all tasks and sends inquiries and "stupid" servers, or "stupid" clients who relies on a "smart" server. In both cases, the client would deal with the presentation layer and the database server, while only one of them or both would be responsible for the application layer. This architecture enhances the stability of the application and separates the database from the display of data, but does not allow for a true specialization of layers, so most applications have grown this architecture. The N-layer web application architecture encounters complex applications when the three-layer solution is insufficient and this architecture generally divides the application layer into multiple layers. [5]
+Web applications have been experiencing enormous growth in popularity due to the fact that they are available at any time from anywhere, to different types of platforms and different types of devices, such as computers and mobile phones, with the minimum requirements for technical support. Namely, all you need to use the web application is a compatible internet browser and internet connection. Bearing in mind that internet browsers generally occupy little memory on the client's computer and do not need any additional configuration and executable files, this is another advantage of web applications. 
+In addition, when it comes to extending and maintaining, unlike ordinary client-server applications, web applications do not need to be periodically upgraded on every device from which they are accessed. Just make changes to the file generated by the web application and these changes made on the server side will automatically affect all users.
+Another advantage of web applications is that it is easy to use the capabilities of these applications that do not require any special technical knowledge. Knowledge of using the Internet is sufficient.
+However, regardless of all the benefits that have contributed to the widespread and popularity of web applications, one should keep in mind all the disadvantages that are inherent in them. 
+Since web applications have become increasingly sophisticated over time, today more and more is assumed that each web application will meet the following: 
+Have a responsive design (a design that will look equally well on small screens, as well as on larger and medium sized screens)
+Work and look the same on different web browsers
+Be Safe and Reliable (Especially in the case of applications using credit card information)
+Be easy to use and interactive
+It is precisely these requirements that represent the most critical area where a number of shortcomings of web applications, such as [2] [5]:
+Still insufficiently harmonized standards for HTML, CSS and DOM (eng. Document Object Model) by the web browser manufacturer, and web applications require absolute compatibility with the web browser. In case the web browser manufacturer decides not to implement some functionality or abandon a particular platform or version of the operating system, this may affect a large number of users [5]
+Web applications rely on access to files on remote servers over the Internet, so if the connection stops applications that do not support offline, the use mode will cease to be functional
+The user in his browser can independently adjust some display parameters, for example, font, font size, and so on, the consistency of the application's view is being violated 
+The application speed depends on the network connection speed to the server on which the application is located (Internet or intranet speeds)
+Problems with online security (anti-virus protection, viruses, etc.) 
+However, today in the world of technology there are many tools that greatly accelerate, facilitate and simplify the process of web application development. Development environments and tools are available that enable the development team or individual not only to develop software, but also to test the code.
+When writing software code for web applications, there are two types of encoding: [6]:
+Encryption on the client side (engl. Client Side Scripting / Coding)
+Encryption on the server side (engl. Server Side Scripting / Coding)
+Client Side Scripting / Coding is a type of code that is executed and interpreted within a web browser. Unlike Client Side Scripting / Coding type code, Server Side Scripting code is executed and interpreted on a web server. [6] Precisely because of this kind of program code division, the tools and technologies used to develop web applications will be listed below, depending on the type of code they provide support.
+Some of the most famous Client Side Scripting / Coding technologies are:
+HTML (angl. HyperText Markup Language)
+CSS (engl. Cascading Style Sheets)
+JavaScript
+Ajax (engl. Asynchronous JavaScript and XML)
+jQuery, Backbone, Node.js, Sencha Touch, MooTools, Dojo Toolkit and other JavaScript libraries
+Some of the most famous Server Side Scripting / Coding technologies are:
+PHP (Server Side Scripting language is usually used in combination with MySQL database)
+Zend Framework (PHP object-oriented development environment for web applications)
+ASP.NET (Microsoft Development Environment for Web Applications)
+ColdFusion (Adobe's development environment for web applications)
+Ruby on Rails (Free development environment for web applications written in Ruby programming language)
+Django (Free development environment for Web applications written in Python programming language)
+Laravel (Development environment for web applications written in PHP programming language)
+Spring (Developer Environment for Web Applications written in Java)
+Play (Developer Environment for Web Applications written in Java)
+Perl (Server Side Scripting, the phenomena of PHP has decreased its popularity)
+Python (Server Side Scripting Language) 
+The following table shows an overview of the stack's technologies used to develop the most popular websites:
+Web page
+Front End
+Back End
+Baza
+Google.com
+JavaScript
+C, C ++, Go, Java, Python, PHP
+BigTable
+Facebook.com
+JavaScript
+PHP, C ++, Java, Python, FBML, Erlang, XHP
+MySQL
+YouTube.com
+Flash, JavaScript
+C, Python, Java
+MySQL
+Yahoo.com
+JavaScript
+PHP
+MySQL
+MSN.com
+JavaScript
+ASP.NET
+MySQL Server
+Wikipedia.com
+JavaScript
+PHP
+MySQL, MariaDB
+Twitter.com
+JavaScript
+C ++, Java, Ruby, Scala
+MySQL
+WordPress.com
+JavaScript
+PHP
+MySQL
+eBay.com
+JavaScript
+Java
+Oracle DB
+Table 1 Stack Technology of Famous Websites [2]
+Web applications that provide e-mail, online sales, online auctions, online banking, various social networks, online booking applications, online trainings, online surveys, various blogs, forums, etc. are common web applications.
+Within this chapter, the term web application is introduced, and the most important advantages and disadvantages of this type of software are exposed. Briefly describes the architecture of web applications, which plays an important role in the development of applications. Finally, some of the uses of web applications are listed for the purpose of easier and faster execution of everyday tasks. From everything described in this chapter, we can conclude that when developing web applications, customer requirements and the complexity of the application must be taken into account, and accordingly choose architecture and technology that will best satisfy clients' needs and overcome all potential problems caused by individual web application disadvantages. 
+
+3. Ruby on Rails
+In this chapter, special attention will be paid to the Rails Development Environment for Web Applications. Some of his possibilities will be described and briefly explained the basic principles underlying the development and philosophy of this environment. A link will be presented between the Ruby program language and Rails, highlighting the benefits of using this development environment and the reasons why this development environment is popular.
+Ruby on Rails, or shorter Rails, is a development environment for web applications, and it is written in the Ruby programming language. This is open-source software under the MIT license. [7] Ruby on Rails is actually a full name and legal name for Rails, but most of the developers in the speech omit the part of "on Rails". [8]
+In 2004, when Ruby on Rails first appeared, it became one of the most powerful and most popular environments for the development of dynamic web applications. It is used both by individuals and by large companies. Some of the most famous applications developed in Rails are: 37signals, Airbnb, GitHub, Shopify, Scribd, Twitter (by 2011), LivingSocial, Groupon, Hulu, The Yellow Pages and others.
+The question arises why Rails has become so popular?
+First of all, Rails is fully open-source software and you can completely download and use it freely. Rails also features a compact and elegant design that owes Ruby the programming language on which it is based. 
+Common Web tasks such as generating HTML, creating a data model and writing a Uniform Resource Identifier (URI) 6 are easily solved using Rails, and the code itself that produces it is legible and concise. [9] 
+Rails quickly adapts to the development of web technology and changes in the design of the environment. Rails was the first development environment that fully implemented the REST architectural style for structuring web applications. Rails Creator David Heinemeier Hansson and the rest of the Rails community members who still work on the development of Rails, incorporate Rails into successful techniques from other environments. The most famous example of this phenomenon is the merger of Rails with Merb, which was the rivaling Ruby web framework, and thanks to this merger, Rails today has a modular design, a stable Application Program Interface (API) 7.
+One of the benefits of Rails is that it is completely friendly to beginners, and the first reason is Ruby's easy-to-use language programming language, highly flexible and allows you to write clear code with as few lines as possible, which means you can devote to learning the basic programming principles, which is especially important if you are a beginner. Rails performs a lot of "hidden" work for you, but this can be a sword with two blades, because in the case of a beginner, you risk not to learn the basic principles that you need to know. For this reason, you need to learn Ruby on Rails from the ground, which means first of all you need to be sure that you are familiar with Ruby programming language. The question arises as to whether there is a difference between Ruby and Ruby on Rails developers? Although small, it still exists. Namely, hypothetical you can develop a Ruby web application in some other development environment, for example, Sinatra, but it should be remembered that the Ruby developer's business will certainly not be reduced to writing Ruby code only. Therefore, it is necessary to know some of the appropriate frameworks for the development of Ruby web applications.
+What makes Rails very popular is the eligibility for rapid prototyping. Namely, in a few hours you can make a complete functional application. Just follow the principles such as Convention over Configuration and Rails will do a lot of work for you, and you will be able to focus on the specificity of the application you are developing and to really enjoy this development. David Heinemeier Hansson, an expert from Rails, said that the Rails phenomenon meant a shift from programming because of the programming needs for programming because of a fall in that way of intellectual exercises and expression. [10]
+However, what has most affected the sudden popularity of Rails after its emergence are the basic principles on which its philosophy is based, and the benefits they bring. These are the following principles:
+Rails is Opinionated - Rails is stubborn, confident
+Namely, while in other environments and programming languages ​​(e.g. Perl) generally there is no real or best way to do anything, but there are several ways, Rails is tough about the common problems associated with web application development. Rails always has a "Rails" way to solve many of the problems that web developers face. This means that you will have to make fewer decisions if you respect the Rails Convention and you will be able to dedicate more time to what you really need to do. Some benefits: accelerated application development, improved collaborative work, easier maintenance, and more.
+Rails is Omakase - Rails is Omakase8
+In a well-known presentation, Heinemeier Hansson introduced Rails as omakas, modeled on buyers in sushi restaurants, who ordered omakas by giving food to the boss, believing that they would make a good choice instead of choosing themselves. This means that many Rails APIs are involved in the discussions that are the result of discussions between developers who have made a significant contribution to the development of Rails. For most things, these decisions are very useful. That's exactly what makes Rails interesting. Rails is very powerful and performs a lot of hard work for developers, especially when it comes to configuration.
+Convention over Configuration - Follow the convention before you configure it
+This principle is actually another example that confirms that Rails is "hard-core software" (opinionated software). While in other development environments, such as the Java web development environment, a lot of configuration files are required with a lot of settings, Rails is enough to follow conventions and there will be no need for any additional configuration. Instead of relying on additional external configuration files, Rails makes the assumptions. For example, by convention, if you create a model called "User", Rails will store user data in a table called "users" without any additional configuration. Rails will also assume that the name of the table in the database is in plural in the case that the name of the class is singular. Therefore, it is not necessary to have any additional files that will specify that the "users" table in the database corresponds to a class named "User". 
+In Ruby programming language is all the object. Object-based mapping in Rails has been solved using a special layer of ActiveRecord and is just one of the examples in which adherence to conventions significantly reduces time and effort invested in the complete application development. 
+This principle means productivity in operation, without losing time on configuration files, and one of the advantages is to facilitate collaboration and communication with other developers since they also use the same conventions.
+Do not Repeat Yourself - Do not repeat
+This principle of software development, better known under the DRY acronym, is widely accepted by Rails developers. Following this principle in application development is the best way to avoid duplicate code writing that makes applications more complex, more difficult, and more expensive to maintain, more vulnerable to bugs made during application development and more inappropriate to implement changes. The best example of DRY principles in Rails is support for automated testing. Unlike manual testing where a lot of code is repeated, automatic testing is DRY. 
+Rails allows you to use all the benefits of a Ruby programming language, not only for the purpose of writing cleaner code that will be suitable for maintenance and reuse, but also for the purpose of eliminating code wherever possible. DRY Principle and Principle The Convention over contiguration is the best example that shows by following one principle you follow to a certain extent the other principles of Rails. By knowing Rails conventions, it's possible to create a simple application with just a few lines of code. This will be demonstrated under Chapter 4.
+In addition to the above principles, there are still some of the principles that we will not specifically deal with as they are not so important for practical implementation, but rather they relate to the philosophy of Rails as an environment, such as: Progress over stability, Provide sharp knives, Push up big tent. [10] 
+Accelerated development and high popularity of Rails owes a team of motivated professionals who actively participate in its promotion, development, writing new plug-ins and gems10 (for example, there is a gem for upload images). 
+However, the problem that is often associated with the Ruby on Rails environment is the vulnerability, or the inability to process data in case of a larger amount of traffic. Just because of this problem, in 2011, Twitter completely switched to Scala. Michael Hartl in his book Ruby on Rails tutorial on this issue says: "Part of this problem lies in misunderstanding and misunderstanding. You make a scalable alien / application, not a framework, and Rails, no matter how great it is, is just a framework. The real question to ask is: - Can you make a scalable web application using Rails? In any case, the answer to this question is yes. Some of the densest traffic pages are just using Rails. In fact, scalability is beyond the scope of self-Rails and be sure that if your application is ever supposed to bear the load as Hulu or the Yellow Pages, Rails will surely stop you from conquering the world. "[9] In support of this statement, the fact is that in January 2016, the number of websites using Ruby On Rails is estimated at around 1.2 million. [11]
+From everything that is presented in this chapter, we can conclude that the appearance of Rails has brought drastic changes to the world of web technologies, but also to the world of web application development. Rails with all its advantages and disadvantages is a very powerful tool for the development of web applications and it takes a lot of time to invest in exploring its capabilities, adopt its philosophy and apply the conventions on which the development of applications in Rails is based. Bearing in mind the wide spectrum of opportunities Rails offers, however, knowledge of the work in this framework and the knowledge of the Ruby programming language is worth investing time in learning them. It is precisely the principles discussed in this chapter that will be based on the development of the application that will be implemented in this work.
+
+
+
+
+
+4. Dummy application
+This chapter will describe how to create a simple application using Ruby on Rails. The focus is on getting to know the basic commands used to develop each Rails application. This chapter also provides a brief description of the MVC architectural paternity, and its application to the development of this application. One of the main principles of Rails, which is the Convention over configuration11, is also presented. The app will allow you to easily display greeting messages using reloading links on another page. Since the emphasis is on the development of the simplest functionalities using Ruby on Rails, this application will not pay attention to the design, nor will it be detailed in this chapter.
+Although all Rails applications are actually just code written in the Ruby programming language, Rails as a development environment needs to do a lot of "hidden" work in order to allow the application to work with minimal explicit configuration. First of all, Rails must be able to find different parts of our application and therefore require the creation of a specific directory structure of the application and the writing of the appropriate code within the appropriate files. [9] 
+Practically, all Rails applications start with a rails command. This command creates the skeleton, or the corresponding structure of the application rails in the directory within which we are positioned when running the rails command. 
+So, in order to create an application, it is necessary to position it in the desired directory through the command line, then it is enough to type the rails command which in this case looks like this:
+rails new dummy_application
+After that, the rails will create the necessary folders and files, and automatically execute the bundle install command. With the help of this command, rails will install and include libraries (the so-called gem) required for the application's operation. In the event that some changes are made to Gemfile, within which the gems (libraries) that are to be used with the versions are defined, it is necessary to restart the bundle install command to install Bundler12 appropriate gems. 
+To install the gems, a gem command is used. In the event that a gem version is not specified within the gem command, Rails will automatically install the latest version of the gem.
+The following figure shows the set of files that Rails created after execution of the rails command.
+
+Figure 3 A set of created directories
+This is one of the many advantages of Rails: almost instantly brings you to a functional application. Also, since all Rails applications have the same structure, you can easily handle the code written by someone else.
+This simple application is ready to run. Rails owns a command line program, that is, a script that runs a local web server, usually a server called WEBrick.
+To start a local web server in the command line, type the command:
+rails server
+After starting the web server, you need to enter the http: // localhost: 3000 address in the browser to start the application. Since no code has been added yet, the web page will have a default appearance as in the picture:
+
+Figure 4 Appearance of the application after the first start of the rails command
+In case we want to shut down the server, we need to press the combination of keys on the keyboard: CRTL + C.
+In the following, the default page (Figure 4) will be replaced with the corresponding title page. Here is shown exclusively for demonstrating the flow of application development.
+For further work, it is necessary to bear in mind the fact that the Rails Model-View-Controller framework13. The principle of applying the MVC Pattern in Rails is described below and is shown in Figure 5.
+When the browser interacts with the Rails application, Rails accepts browser requests, "decodes" them to determine which controller and which controller method the request applies. Then he calls this controller method. 
+In some cases, the controller will instantly render a view, a template that converts to HTML and return it back to the browser. However, for pages whose content is dynamically changing, the controller first enters the interaction with the model. Usually, the Ruby object is a page element, and its role in the MVC architectural paternity within the Rails application is communication with the database. 
+After calling the model and obtaining the necessary data, the controller transmits data to the appropriate view. View uses embeded Ruby to render pages as an HTML document. After that, the controller returns the entire web page to the web browser in HTML format.
+
+Figure 5 Model-View-Controller Architecture [9]
+For this simple "Hello world!" the application, you only need to add the controller and view code, and the route / path that will connect them. In this application, we do not need the code for the model, since we do not store or need any data from the database. 
+To create a controller, you need to pre-position in the application's directory and then run the command:
+rails generate controller Say hello goodbye
+This command will create a controller called Say with the methods hello and goodbye in the controllers folder, but also in the folders folder folder say, with the files: hello.html.erb and goodbye.html.erb.
+Now we will modify the hello.html.erb file by typing only the html text:
+<h1> Hello World!</ h1>
+If we restart the server and enter the address: http: // localhost: 3000 / say / hello will display the page with the text: Hello World!
+To make this page more dynamic, we'll add an overview of the current time.  For this view it is necessary to first modify the hello method in the Say controller, so the Say controller now looks like this:
+
+Figure 6 The appearance of the Say controller
+After that, we need to add the following part of the code to hello.html.erb:
+<p> Time: <% = @time%> </ p>
+and we preserve the made changes. After we start the server and enter the same address into the address field in the web browser, the following page will be displayed on the screen:
+
+Figure 7 The home page with the current time display
+We conclude that communication between the view and the controller is successful, since the value of the @time variable is assigned to the Say hello method of the Say controller, and that the value of that variable is successfully displayed in the appropriate view that can access those variables. The value is displayed on the page using embed Ruby, or a code between the characters: <% = i%>. The content between these characters is interpreted as Ruby code, the result of execution of the code is converted to a string and this value is displayed on the page instead of the code sequence <% = ...%>. Because of that, in Rails applications, the files that represent the view have the extensions html.erb (embedded Ruby).
+Since there are no common Web applications with just one page, the following will be linked to the links of two pages, each page being actually a special view for the appropriate Say control method.
+In the file goodbye.html.erb, we first add the following part of html code:
+<h1> Goodbye World!</ h1>
+<p> See you! </ p>
+<p> Say <a href="/say/hello"> Hello </a>!</ p>
+Then add hello.html.erb to: <p> Say <a href="/say/goodbye"> Goodbye </a>!</ p>
+In this way, we managed to link two pages to the links. After starting the server, the page will have the following look:
+
+Figure 8 The home page of the application
+When we click on the Goodbye link, a new page opens, where by clicking Hello link we return to the homepage.
+
+Figure 9 New page of the application
+This completes the work on a simple dummy_plication that aims to familiarize with the basic commands and elements related to the creation and development of each Rails application. 
+This chapter shows the process of creating a simple application for demonstrating basic commands that are applied in the process of creating all Rails applications. All the commands used in developing the application in the next chapter will again be applied to the development of a more complex web shop application. It's important to keep in mind that, regardless of the complexity, all Rails applications are structured and followed by MVC architectural patern, and all of these simple concepts are applied to the development of this application, they can also apply to the development of more complex applications in Rails as what is a web shop application that is the result of a practical part of this paper.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5. Web shop application
+Within this chapter we will focus on the application of Ruby on Rails for the development of a more complex application. The functionalities that will be realized are presented through a use case diagram, and the basic idea of ​​solving problems related to the realization of functionality will be shown through the Entity Relation diagram. Also, the manner in which these functionalities are implemented will be described with more detailed explanations of the application of Ruby on Rails. 
+Web shop apps belong to the most popular business web applications. Their importance is also related to the fact that one of the most used web applications is web store applications such as Amazon, e-bay and others, whose market has long been a whole world. 
+The technologies that will be used to develop the application under this chapter are:
+HTML5, CSS3, Ruby on Rails (Rails 4.0, Ruby 2.1.5), JavaScript, SQLite database, Bootstrap and jQuery.
+The operating system on which the application is developed is Windows 8.0, but the Rails development environment also has support for other operating systems, and the application can also be developed on any other operating system and on any other operating system version.
+The application that will be developed under this chapter will have implemented functionalities related to the review of offers, purchases and payments. In addition, users will be able to register and sign up, and only registered users will be able to purchase and pay for items.
+This application is also suitable for implementing additional functionality since Rails offers support for easy migration of the database into a new state.
+The next use case diagram (Figure 10) shows the way in which a user can use previously specified functionality along with the most important specificities of each one. 
+
+Figure 10 Use case diagram of the web shop application
+In order to make it easier to understand further implementation of the solution, it is important to present the system using the ER diagram. 
+Figure 11 ER diagram of the web shop application
+From the ER diagram we conclude that each user who is logged in will have one basket and one basket will belong to only one user. ProductVariant is an entity that will allow us to present different variants of one product as there are several different colors and more different sizes of one product. The LineItem entity will actually represent ProductVariants that are in the basket. The following sections will describe the most important parts of the code written for each functionality.
+5.1. Module users
+
+After we created a new application in the desired directory using the rails command, the application of which is explained in the chapter under the serial number 4, we can begin with the implementation of the basic functionality of the web shop application.
+Within this module, the following options for users will be implemented:
+Registration 
+Login
+5.1.1. User registration  
+
+In order to enable user registration, it is necessary to have a model that will be in charge of adding users to the database. So, in accordance with the Rails convention and the ER diagram, we create a User model that will have attributes: username, password_digest, and mail. We create this model using rails generate a command, and in the routes.rb file we designate it as a resource so that we automatically have routes for all http methods that are mapped to the appropriate controller methods. To create an appropriate table in the database for this model, you just need to migrate to the database. We will do this by typing in the command line a command:
+rake db: migrate, and execute the command:
+rails generate model User username: string mail: string password_digest: string with which we create the model. 
+In accordance with the Rails convention, the model is always called in the singular, while the controller is always called in the plural. Thanks to this convention, Rails itself will conclude without any additional configuration that there will be a table of users with columns username, mail and password_digest and using the ActiveRecord layer will correctly map objects of the User class into the tables of the users table. Also, in accordance with the convention appointment of the controller, Rails concludes which controller methods map to which views. For example. the new controller method will Users map to the /view/users/new.html.erb file where the user data entry form is located. It is very important to correctly name views, models and controllers, because Rails will perform proper mappings thanks to these naming conventions.
+The word rake is a coin of words: ruby ​​and make and this command will be every time when it is called to execute all migrations that have not been executed before. In this case, migration was made 20160709134839_create_users.rb that created the table users in the database. All migrations made can be found in the migrate folder. The following figure shows the migration that created the table users in the database.
+
+Figure 12 Migration to create a Users table
+It is important to note that at the moment, all CRUD (create, read, update, and delete) operations for the User model will not be implemented, as the application will only support the possibility of adding new users and user registration for the time being. In the event that in the future it is necessary to enable deletion and change of users, other methods will also need to be implemented.
+Before we created the User model, we need to add gem bcrypt-ruby to Gemfile to ensure that the user codes will be expanded in the database. Gem is added by adding a line to Gemfile
+gem 'bcrypt', '~> 3.1.7' and then start the command in the command line 
+bundle install. 
+After that, the User.rb file is edited as in the picture below:
+
+Figure 13 Model User
+Line 7 indicates that the user's code will be hacked, and lines 2, 3, 4, and 5 serve to validate. 
+Line 8 denotes link 1-1 with the Cart model that we will create later.
+It is also necessary to create a controller for the User model where the business logic associated with this resource will be located.
+We create a controller by rails generate commands as a parameter, we always send the noun in plural, according to the rails convention. Therefore, it is necessary to execute the command:
+rails generate controller Users,
+and then add to that controller the method that will allow adding and logging users.
+To add a new user we need the create and new methods (Figure 14).
+
+Figure 14 Create and new methods of controller users
+The create method will allow the new user to be saved to the database, while the new method will serve to create a new User instance. Also, we added another private method called user_params, which allows us to respect one of Rails's security features. Namely, Rails requires that in case of receiving parameters from the form / from the request, we specify precisely which parameters we expect and which we allow to prevent the incorrect data from reaching the base and damaging the database. In case we do not do this, Rails will report an error trying to pass the prohibited parameters. Given that these parameters might be needed in other methods of this class, it is best to make a private method and later only call this method in order to comply with the DRY principle.
+The @ user.save command will return as a result of true or false, depending on whether the new user is stored in the database or not. In the event that the method returns as a result of true, the instance of the Cart class for that user will also be created and assign the @cart variables. Here we have respected another Rails convention, namely that we named the instance class variable so that the first character of the name is "@". These variables will be visible to the appropriate view and the desired data will be displayed. 
+Also, in case the user has successfully created the command redirect_to will redirect us to the homepage of the web shop, otherwise the form will be displayed again to add a new user, or a registration form. 
+It is important to note here that all paths currently available can be viewed on the link rails / info / routes. Here we see that products_path will be translated into get request / products which will be mapped to the index method of controller products, but it is necessary to create controller products before. Product-related functionalities will be described in more detail in the bidding module module, and we will not deal with this description here. 
+We have yet to explain the forwarding of registration data from the form. 
+The following figure shows the part of the code that refers to the data entry form for user registration. We created the form in the / view / users folder and displayed in the new.html.erb file. The form was created using the form_for helper method that we passed to the @user variable (the variable is visible to new.html.erb view from the new method of controller users due to the naming convention) and the address to which we send the request. By clicking the form data button, it will be forwarded within the @user object via the POST request. The POST request will be mapped to the create method of controller users and this method will add a style to the newly created user base.
+
+Figure 15 For the registration form of the user
+5.1.2. User login 
+
+In order to enable user login, we will create the first sessions controller that will be responsible for updating the attribute of a session object that always exists in Rails and saves user information in the browser. The following figure is displayed with the controller session.
+
+Figure 16 Sessions controller
+The create method receives the data that we sent to the POST method from the login form and sets the object's session parameters in case it is found in the user's database corresponding to the passed username and password combination. In the event that the valid data has not been forwarded, the user is redirected again to the application form.
+Within the method of destruction, there is a code that is executed after the user clicks the login button or closes the browser. This method sets the session object parameters to nil and invokes the sign_out helper Sessions method that sets the value of the SessionsHelper @current_user variable to zero. 
+Otherwise, Helps in Rails serve to merge functions that can be invoked anywhere in the code, and it is enough to just include them in the appropriate helper file whose method we want to call. Helper is included with the include keyword and can not be instantiated as a class. SessionsHelper is created in the folder / helpers, and the helper is shown in the following figure. 
+
+Picture 17 Sessions helper
+Methods current_user and current_user = (user) are getters and setters for the @current_user variable that represents the currently logged in user. The current_user method differs from the usual getter, because it sets the value of the @current_user variable to the corresponding user in the session and returns that value, but only if this value is not defined (nil), otherwise it returns zero as a value. The sign_in (user) method calls the setter and sets the value of the @current_user variable to the value we passed as a parameter.  The sign_out method sets the value of the @current_user variable to zero, and the signed_in method? checks if the value of the @current_user variable is different from zero and returns true if it is. Now these methods will be available to us anywhere in the code where SessionsHelper is included, and the @current_user variable will change globally.
+
+Using SessionsHelper, we solved the problem of user registration persistence, and the login and unsubscription problem was solved using the create and destroy method in the session controller. In the end, it should be noted that the user will be active in the session until the browser closes, by which the session object itself is cleared, or when the non-delete request button is not sent which will be mapped to destroy the method of the control sessions.
+
+5.2. Bid Review Module
+
+Within this module, the following options for users will be implemented:
+Overview of all products
+Search by category
+Search by size
+Search for items by brand
+Search for items by price
+Search for a single item
+In order to display items, you must first create a model, or product resource, and migrate. Based on the ER diagram (Figure 12), we conclude that the Product is in relation to the Brand, Category, and ProductVariant entities, and we will immediately generate the Brand, Category and ProductVariant models. Since the ProductVariant is in relation to the Color entity, we will also generate the Color model. We generate all the listed models or resources with the attributes shown in the ER diagram.  
+Then it is necessary to make the migrations that will be created in the base of the tables for these models, and for this it is enough to execute the rake command. After that, it is necessary to generate two migrations that will add two new columns to the products table and mark them as foreign keys on the tables of brands and categories, respectively. When launching migrations for these models, Rails will also add a column with the name model_id, type integer, and set it as the primary key. Then we will generate a migration that will add two new columns, that is, foreign keys to the products and colors tables in the product_variants table. 
+Therefore, for the described migrations, the following commands must be executed in sequence:
+rails generate migration AddCategoryIdToProducts category_id: integer: index
+rails generate migration AddBrandIdToProducts brand_id: integer: index
+rails generate migration AddProductIdToProductVariants product_id: integer: index
+rails generate migration AddColorIdToProductVariants color_id: integer: index.
+It is necessary to list the names of migrations in accordance with the convention in order to make the correct connections between the tables in the database, and to later correctly map objects in the tables of the database in the database. Now you need to execute the command db: migrate that will make all the necessary migrations in the database.
+Since the relationship between the Brand and Product entities, and Color and Product, is a one-to-many relationship, and the relationship between Color and Product is a more-in-a-lot connection, with the inter-entity for that ProductVariant, we need to define the links in the code of created models as in the following pictures:
+
+Figure 18 Model Product
+
+Figure 19 Model Color
+
+Picture 20 Model Brand
+
+Picture 21 Model Category
+Within the Color model, it is immediately declared a one-to-many connection with the LineItem entity (model) that will be created later in the module module.
+In this way, we have achieved mapping of class objects into corresponding tables in the database without any additional configuration, and we can move to the implementation of functionality.
+To display articles on the title page and filter items by category, brand, size and price, we need to add the following code to the index method of the controller products:
+
+Figure 22 Index method of controller products
+Within this method we call a hash object called filter in which we store the parameters that we received as part of the request request from the form that is in the /view/products/index.html.erb file. The parameters from the form in the controller are derived from the hash object of the params indexed by the corresponding symbols. Symbols are indicated by a two-letter and symbol name, such as : size i: brand. In the event that we have not received any parameters the hash object the filter will remain blank.
+In Rails, it is not necessary to type SQL queries on the database to get data from the database or manipulate them. Since all Rails models are inherited from the Base model through the ActiveRecord layer, this layer provides a whole set of methods that will send queries to the database and return data from the database without typing the SQL query. 
+An example of such a method is the method where. In this case, we will use the method where forward the hash object filter, which will serve as a criterion. If the filter object is empty, Product.where ({}) will be interpreted as Product.all, which is equivalent to SQL query SELECT * FROM Products.
+Range condition that we encounter in line no.10:
+filter [: price] = (range [0] .. range [1]), will be interpreted as SQL query:
+SELECT * FROM Products WHERE (product.price BETWEEN range [0] AND range [1]). Also in this line of code we encounter a range object that denotes the number interval between the first and second values ​​that we have listed within the range. 
+In case the user sends the size as a parameter, it is necessary to make an internal join operation between the products table and product_variants, because the product table does not store information about the size of the product. The internal join operation will be very easy to do using the joins method, which is also enabled by ActiveRecord. Line 17 will, as a result, return all product objects with the product_variant of the size that we sent in the request. For example. in case we only sent a size 32 in the request, line 17:
+@ productss = Product.joins (: product_variants) .where ({product_variants: {size: 32}}). uniq, would be interpreted as the following SQL query:
+SELECT DISTINCT products.* FROM products INNER JOIN product_variants ON product_variants.product_id = product.product_id WHERE product_variants.size = 32, and the result of the command are all products whose product_variants have a size of 32, without duplicates. 
+The form in which we receive these filtering parameters is shown in the following figure:
+
+Figure 23 Code filtering form
+The following figure shows the part of the code that displays all products, ie the display of search results.
+
+Figure 24 Product Code Listing
+Since the @products variable from the index controller product is visible within the view of /view/products/index.html.erb, it is enough to display each loop on each page. 
+From this code we also see that for each product, the "Show details" button is generated, which has the id in the format: button_id of the product. In this way we will help jquery to be able to find out which button the user clicked and from the id of the button that contains the product id, find the product in the database. Clicking this button sends the request that is mapped to the show method of the controller products. The body of this method is shown in the following figure:
+
+Figure 25 Show method controller products
+We see that two variables appear in the body of this method. The @product variable is the product that we clicked to see for more details, while @list contains 4 randomly returned products from the database, which we will later display as an offer of items from the offer. 
+Now we have to do a single item review. The following figure shows the part of the code from the file /view/products/show.html.erb.
+
+Figure 26 A piece of code for displaying a single item
+For an item that is saved in the @product variable, we will display the name, description, brand name, category, colors available and the sizes available for individual colors. On line 30 there is a loop that will appear on the shape of the squares of this color for each product product @product (from the show method).  
+Clicking the appropriate color fills the select element with jquery. The following figure shows the part of the code, that is, the portion of the script that, based on the id of the selected product and the color id we selected in response to the request, receives all product_variants objects that meet these requirements, and then their sizes are sorted using jquery- a (line 95) lists these values ​​into an element with id sizes. 
+
+Figure 27 Script that records product sizes based on the selected color
+In order to enter the appropriate sizes into the item with the id sizes, first we need to get this information from a service. In this case, the service sizes in the product_variants controller will serve as a service for obtaining this response. Get the request is mapped to the sizes product_variants controller method that returns all the sizes of one product whose color corresponds to the color we send in the request. This method is shown in the following figure:
+
+Figure 28 Sizes method of product_variants controller
+Here we can notice the use of the pluck function that locates the column size elements from the product_variants table into a series of elements. This function returns this string as a result in the json format, and the jquery code on line 95 (Figure 27) will enter that information into the corresponding element.
+The next section of the code allows you to see four random items that we have saved in the @list in the show method. These items will be displayed to the user as a purchase proposal.
+
+Figure 29 Code for displaying additional products
+Each of these items can be viewed in detail by clicking on the image of this item, since the link inside the img tag is redirected to localhost: 3000 / products / show /: id, where: id is actually the id of the product to which we image clicked.
+5.3. Module of basket
+
+Within this module, the following options for users will be implemented:
+Add item to basket
+Delete an item from the basket
+Billing the price of items in a basket
+First, you need to create a model, or a Cart resource that will represent a basket, and then create a LineItem resource that will represent the item in the basket. 
+After that, it is necessary to generate a migration that will add a foreign key to the table for users in the carts table, as well as migrations that will add foreign keys for the products, carts and colors tables in the line_items table.
+Therefore, the following commands must be executed in the order:
+rails generate migration AddUserIdToCarts user_id: integer: index
+rails generate migration AddProductIdToLineItems product_id: integer: index
+rails generate migration AddCartIdToLineItems cart_id: integer: index
+rails generate migration AddColorIdToLineItems color_id: integer: index
+rake db: migrate
+After completing these commands, you must add the following code in the cart.rb and line_item.rb models:
+
+Figure 30 Associations between table carts and other tables
+
+Figure 31 Associations between the table line_items and other tables
+in order to allow the correct mapping of the object to the table's tables in the database.
+Since the button for adding the item to the basket is in the detailed view of the product, it is necessary only to add the logic for this button to the same file.
+The following figure shows the part of the script that refers to the logic for adding the item to the basket.
+
+Figure 32 A script that updates the contents of the basket and the number of items in the basket
+After clicking the button with the btn class, Jquery will allow the execution of the function body in Figure 32. In the function of the function, it is first checked whether the user is logged and if there is no warning that an error has occurred. The warning display settings are listed between lines 108 and 124. In case the user is logged in and the color and size selected is selected, the value of the element with the id-cart cart is first updated. This value represents the number of items in the basket. This is also realized using jquery. Then the parameters are sent by post using the method within the request that is mapped to the create method of the controller line_items. The body create methods of the line_items controller looks like this:
+
+Figure 33 Create the method of the line_items controller
+Since the @line_item object has a reference to the Product and Cart objects, it is necessary to first find the appropriate product and save it in the @product variable so that we can enter all the parameters for the @line_item object, while the cart attribution of the @line_item object will be placed on the cart of the current user calling the method from SessionsHelper. In the event that @line_item is successfully saved, or the successfully added item to the shopping cart, the @product object in the json format will be sent as a response. In the event that it is not successfully saved, a message will be sent in the json format.
+The following figure shows the part of the code from the /view/line_items/index.html.erb file that serves to display the line_item (shopping items) that are currently in the user's basket that is logged in.
+
+Figure 34 Code to display the contents of the basket
+On line 40 there is a button for a button that allows you to delete items from the basket. It is enough to send the appropriate request with the delete method. This request is mapped to destroy the control method @line_item. The destroy method is displayed in the following figure:
+
+Figure 35 A method that removes an item from a basket
+Therefore, first in the base line in the table line_items we find the corresponding style that has the id sent in the request request and we save it to the @line_item object. Then we invoke the ActiveRecord method of destruction over the @line_item object in order to delete that item from the basket and the table in the database. After that, we redirect the user to a view that displays the contents of the bucket.
+Figure 34 shows the part of the code for charging the price on line 43. The price is stored in the @price variable and each loop is updated according to the change in the contents of the basket. 
+
+The following figure shows the part of the code that shows the value of the current order, where the shipping costs are 30KM.
+
+Picture 36 Current cost of costs
+5.4. Payment module
+
+Within this module, the following options for users will be implemented:
+Enter delivery information
+Payment orders
+For the purposes of realizing these options, we will create two new files called /.html / carts / next.html.erb and pay.html.erb within the / view / carts folder and add the next and pay in the carts controller. In order to be able to perform correct mapping of requests to methods in routes.rb file we need to add these two routes. 
+
+Figure 37 Mapping for next and pay methods of carts controllers
+Figure 38 shows the code for the data entry for the delivery. This code is in /view/carts/_info.html.erb. Given that we have named this file in accordance with the convention _ + filename, it will be marked as partial and will be rendered in any other file within the folder / view / carts using the <% = render 'info'%> command. In this way we avoided duplication of the code. 
+Form data is sent by a request that is mapped to the route.rb file on the payment method of the carts controller.
+
+Figure 38 Form for entering delivery data
+The following figure is shown in the pay method:
+
+Figure 39 Payment method of the carts controller
+This method rescues form information into the appropriate variables. For now, this information will not be used anywhere else, but is useful in the event that in the future it decides to implement a module that will deal with orders.
+We still have to add the following code to the place where the order button is located. 
+
+Figure 40 Code for "Card Payment"
+Add code to /view/carts/pay.html.erb. 
+Since we will use the comic book service for payment, it is only necessary to list the src link script as on line 49. This script will allow us to verify the entered credit card information by the stripe service. In the event that the information is correct, this service will return the stripe token that will enable us to register a payment within the create method of payment controller charges or to report an error in case the credit card information is incorrect.
+When creating methods, the controller charges are shown in the following figure:
+
+Figure 41 Create method of controller charges
+This method creates a charge facility on the basic information it receives from the stripe service in case the user has entered valid payment information. Otherwise, it reports an error and displays the form for entering payment information again. In the event that the payment is successfully executed, the basket of the currently active user will be emptied (line 18, Figure 41) and the process of purchasing items is completed.
+This chapter explains and lists the most important sections of the web application code code that was developed in this work. The code is written in accordance with Rails Conventions and Rails principles, and in this way the two most important principles of this environment are respected: Convention Over Configuration and Do not Repeat Yourself. The method of applying different technologies with a focus on Ruby on Rails is explained, for the purpose of realization of the functionality of the application, registration, examination of the offer, purchase and payment, which was one of the goals of this final paper.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6. An example of using a web shop application
+This chapter will demonstrate practical work through examples of using the web shop application that came into being as a result of this work. Some of the most important functionality of the application will be shown and explained how they are used. When describing them, screen images will be used for easier explanation. 
+The following figure shows the appearance of the screen after the user launches the application. Since the application is not deployed, it is located locally on the computer, available at localhost: 3000, after running the server in the console.
+
+Figure 42 Part of the cover page
+On the left side there is a filter for easier search for the available items and is currently enabled to search by brand, size, price and category. By selecting the desired parameters and clicking on the "Filter" button, only those items that meet the search parameters will be displayed. The following figure shows the search result for which the following parameters are selected: Brand: Nike, Size: 33, Price: All prices.
+
+Figure 43 The search result for the default parameters
+Search for items by category by clicking the desired option on the title bar at the top of the screen. Currently available categories: Men's Shoes, Women's Shoes and Children's Shoes.
+More product information can be obtained by clicking on the item's picture or by clicking the "View details" button on the app's homepage. " The following figure shows a detailed view of an item.
+
+Figure 44 Detailed view of the article
+A detailed view of the article also offers insights into colors that are available for the selected item. By clicking on the color in the size field, the user can select the size of the item that is available for the selected color. By clicking on the "Add to cart" button, the item is added to the user's basket that is currently logged in. 
+In order for a user to log in to the system, it must have a pre-created user account with a unique username. The registration is done by filling in the form shown in the following figure, which appears on the screen after clicking the "Registration" button on the title bar at the top of the screen.
+
+Figure 45 Form for user registration
+After the user clicks on the "Register" button on the form, the validation of the data is done, and in case a successful user can log in.
+In the event that the user wants to sign in, it is necessary to first click on the "Login" button on the title bar. After that, you need to enter a valid combination of user name and user code on the screen form in Figure 46, and click the "Sign in" button. 
+
+Figure 46 Application form for the user
+Each user logged on can view the contents of their own basket. It does this by clicking on the basket icon on the title bar. After that, the content of his basket is loaded.
+
+Figure 47 Appearance of the contents of the basket
+In case the user changes his mind about the contents of the basket, he can delete the item from the basket by clicking on the "Delete" button. Upon completion of the selection of items, it is necessary to fill in delivery data and make payment. To enter the delivery data, you need to click on the "Continue" button (Figure 48) to indicate that the user wants to complete the order.
+
+Figure 48 The appearance of the contents of the basket
+By clicking on the "Continue" button (Figure 48), the form shown in Figure 49 appears on the screen where the user enters the data necessary for the delivery of the order. 
+
+Figure 49 Form for data entry for delivery
+After the user enters the data and then clicks the "Confirm" button on the screen, information about his purchase appears in the format shown in Figure 50.
+
+Figure 50 Delivery information
+In case the user wants to cancel the purchase, it is enough to click on the "Cancel" button and show him the contents of his basket that he can empty or add a new item to it.
+In case the user wants to complete the order, it is necessary to make a payment. Payment is done in a way that the user enters the appropriate information in the form that appears on the screen after clicking on the "Card Payment" button. The following figure shows the screen for the payment information form. By clicking on the payment button, the checking of the entered data is automatically checked, even if the valid user data is empty.
+
+
+Figure 51 Payment Form
+Within this chapter, the most important functionality of the web shop application, which was the subject of the development of this work, was demonstrated. In this way, one of the main goals outlined in the Introduction is presented, and it is a web shop application that provides a review of the offer, purchase and payment. 
+In the future, the application could be expanded with additional functionality in the form of admin panels where user administration could be performed, bid updates, statistics overview, etc. As part of this work, only elementary functionalities related to the web shop were realized in order to demonstrate the way Ruby on Rails is used to develop applications.
+
+Conclusion
+Bearing in mind the fact that nowadays almost everything is available on the Internet, it is expected that business strategies in the modern world are planned and implemented accordingly. An example of the impact of technological development is the solution to the problem of online commerce in the form of a web shop application. In this way, many sales chains have solved the problem of time savings that customers would spend on shopping. As part of this work, one software solution was presented to enable web shop customers to conveniently, easily and quickly perform a review of the offer, purchase and payment using a web application. 
+From the seller's point of view, this solution is certainly more long-term, more cost-effective, and more convenient than printing expensive catalogs and advertisements in a prime time, and could be adequately expanded to provide insight into statistics that would actively contribute to improving the business strategy. From the customer's point of view, thanks to the practical design, this solution enables a faster and more transparent insight into the offer of the web shop and easier payment without waiting in line at the cashier, all of which is available at any time and anywhere.
+From the corner of technology, web applications are suitable because they have minimal technical support requirements. All that is needed for their use is a compatible internet browser and internet connection, and are available for different types of platforms and different types of devices like computers and mobile phones. However, today in the world of technology there are a number of tools for developing web applications that put before the development team (developers) the challenge of deciding which technological stack to choose for development. 
+In this work, Ruby on Rails was used, considering all the benefits that the adoption of the conventions of this development environment brings. As a result, we received a web shop application with minimal time spent on the configuration files, which allowed us to devote more time to the specificities of this application, and achieve the functionality of the application in a short period of time with minimal written code. Rails performs a lot of hidden work for the developer and it takes a lot of time to invest in order to understand the concepts of this environment and how it works. The Internet offers plenty of blogs and video tutorials for learning Ruby on Rails and developing apps in it which can be confusing to the beginner because they sometimes deviate from the original principles on which Rails rests. For this reason, the software solution developed in this paper fully relies on the conventions and practices listed on the manufacturer's site.  
+Having in mind all the advantages and disadvantages of this development environment and examples of well-known web applications developed using it, we can say that Rails is a powerful tool for developing web applications and a leading framework for developing software written in the Ruby programming language. Although he requires a lot of time and effort to explore his capabilities, he has adopted his philosophy and began to correctly apply the conventions on which the development of applications in Rails is based, one should bear in mind the wide spectrum of opportunities that it offers completely free of charge. My opinion is that this investment of time is cost-effective. 
+Finally, we can conclude that when developing web applications, customer requirements and the specificities of the application must be taken into account, and accordingly choose technology for development.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Literature
+[1] Wikipedia (2016). Web engineering. [Internet] Available at: https://en.wikipedia.org/wiki/Web_engineering [accessed on June 20, 2016]
+[2] Zekic, S. M. (nd). Web applications. [Internet] Available at: http://www.mathos.unios.hr/wp/wp2009-10/P14_Web_plications.pdf [accessed June 28, 2016]
+[3] Wikipedia (2016). Web application. [Internet] Available at: https://en.wikipedia.org/wiki/Web_application [accessed on June 20, 2016]
+[4] Paunovic, V., Tomic, S. (2006). PHP seminar manual. [Internet] Available at: http://www.open.hr/wp-content/uploads/2012/04/PHP_prirucnik.pdf [accessed June 10, 2016]
+[5] Nations, D. (nd). Web Applications. What is a Web Application? [Internet] Available at: http://webtrends.about.com/od/webapplications/a/web_application.htm [accessed on June 25, 2016]
+[6] Kohan, B. (nd). Guide to Web Application Development. Guides, Resources, and Best Practices. [Internet] Available at: http://www.comentum.com/guide-to-web-application-development.html [accessed June 10, 2016]
+[7] Wikipedia (2016). Ruby on Rails. [Internet] Available at: https://en.wikipedia.org/wiki/Ruby_on_Rails [accessed on June 20, 2016]
+[8] Browning, R. (2015). 13 Things You Need To Know About Ruby on Rails. [Internet] Available at: http://skillcrush.com/2015/01/29/13-ruby-rails/ [accessed June 11, 2016]
+[9] Hartl, M. (2013). Ruby on Rails Tutorial. Second Edition. Michigan: Addison-Wesley. 
+[10] Hansson, H. D. (2016). The Rails Doctrine. [Internet] Available at: http://rubyonrails.org/doctrine/ [accessed on June 11, 2016]
+[11] BuiltWith (nd). Ruby on Rails Usage Statistics. Websites using Ruby on Rails. [Internet] Available at: http://trends.builtwith.com/framework/Ruby-on-Rails [accessed on July 05, 2016]
+[12] Internet Academy (2016). Why are e-stores the future of trade? [Internet] Available at: http://internet-academy.com/E-commerce/ [accessed on June 10, 2016]
+[13] Beal, V. (nd). API - application program interface. [Internet] Available at: http://www.webopedia.com/TERM/A/API.html [accessed June 11, 2016]
+Browning, R. (2015). 13 Things You Need To Know About Ruby on Rails. [Internet] Available at: http://skillcrush.com/2015/01/29/13-ruby-rails/ [accessed June 11, 2016]
+
+
+
+
+Attachments
+The following code is available on the following link:
+https://github.com/LaylaNukic/RoR.git
