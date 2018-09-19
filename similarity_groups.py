@@ -25,7 +25,7 @@ def get_groups(mat,similarity_factor):
 
 
 def get_groups_statistics(*sentences):    
-    sentences_similarity_factor = 0.678 #prag slicnosti koji odredjuje da li se ponavlja recenica
+    sentences_similarity_factor = 0.65 #prag slicnosti koji odredjuje da li se ponavlja recenica
     repetition_treshhold=10 #prag ponavljanja (%)
 
     #matrica slicnosti recenica u textu

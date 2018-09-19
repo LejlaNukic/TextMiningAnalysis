@@ -7,6 +7,7 @@ similar_and_connected_words = []
 means_like_words=[]
 trigger_words=[]
 synonym_words=[]
+MAX_WORDS = 10
 
 #frekvencija ponavljanja rijeci u tekstu
 def term_frequency(text,word):
@@ -16,21 +17,21 @@ def term_frequency(text,word):
 #rijeci koje su slicne po znacenju sa datom 
 def means_like(means_like_words,word):
     api = datamuse.Datamuse()
-    means_like_result = api.words(ml=word,topics=['computer science','informatics','information technology'], max=20)
+    means_like_result = api.words(ml=word,topics=['computer science','informatics','information technology'], max=MAX_WORDS)
     for w in means_like_result:
         means_like_words.append(w['word'])
 
 #rijeci koje se cesto pojavljuju sa datom
 def triggers(triggers_words,word):
     api = datamuse.Datamuse()
-    triggers_result = api.words(rel_trg=word, max=20)
+    triggers_result = api.words(rel_trg=word, max=MAX_WORDS)
     for w in triggers_result:
         triggers_words.append(w['word'])
 
 #rijeci koje su sinonimi sa datom
 def synonyms(synonyms_words,word):
     api = datamuse.Datamuse()
-    synonyms_result = api.words(rel_syn=word,topics=['computer science','informatics','information technology'], max=20)
+    synonyms_result = api.words(rel_syn=word,topics=['computer science','informatics','information technology'], max=MAX_WORDS)
     for w in synonyms_result:
         synonyms_words.append(w['word'])
 
