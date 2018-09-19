@@ -5,8 +5,13 @@ import re
 def extract_abstract_keywords(text):
     regex_for_abstract = re.compile(r'^Abstract(.*?)(?=Content)', re.MULTILINE|re.DOTALL)#regex za izdvajanje dijela teksta koji je abstract
     match_for_abstract = re.findall(regex_for_abstract, text)
-    abstract = match_for_abstract[0]
     
+    
+    if not match_for_abstract:
+        abstract=""
+    else:
+        abstract = match_for_abstract[0]
+
     abstract_keywords = keywords(text=abstract,words=10,split=True,pos_filter=['NN'],scores=False,lemmatize = True) #kljucne rijeci za sazetak
 
     return abstract_keywords
@@ -15,7 +20,11 @@ def extract_text_keywords(text):
     fulltext = text
     regex_for_summary = re.compile(r'^Summary(.*?)(?=Content)', re.MULTILINE|re.DOTALL)#regex za izdvajanje dijela teksta koji je summary
     match_for_summary = re.findall(regex_for_summary, text)
-    remaining_text = fulltext.replace(match_for_summary[0],'') #otklanjanje sazetka iz teksta
+    
+    if not match_for_summary:
+        remaining_text = text
+    else:
+        remaining_text = fulltext.replace(match_for_summary[0],'') #otklanjanje sazetka iz teksta
 
     text_keywords = keywords(text=remaining_text,words=10,split=True,pos_filter=['NN'],scores=False,lemmatize = True)  #kljucne rijeci za ostatak teksta
  
